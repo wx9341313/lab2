@@ -13,6 +13,8 @@ float dis_per_tick = 2* PI* RADIUS / CPR;
 float dis_L, dis_R;  
 float pose[3];
 
+float delta_theta;//
+
 ros::NodeHandle nh;
 std_msgs::Float64MultiArray msg;
 ros::Publisher odom("~odometry", &msg);
@@ -41,8 +43,13 @@ void loop() {
   dis_R = dis_per_tick * (encoder_pre_R - encoder_pos_R);
   //////////////////////////////////////////////////////////////////
   // write your code
-
+	
   // theta = ???
+	d_theta = (dis_R-dis_L)/2*WIDTH;
+	theta+=d_theta;
+	x+= (cos(theata)*(dis_R+dis_L)) /2;
+	y+=(sin(theata)*(dis_R+dis_L)) /2;
+
   // x = ??? 
   // y = ???
 
