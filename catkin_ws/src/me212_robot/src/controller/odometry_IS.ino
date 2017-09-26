@@ -13,7 +13,6 @@ float dis_per_tick = 2* PI* RADIUS / CPR;
 float dis_L, dis_R;  
 float pose[3];
 
-float delta_theta;//
 
 ros::NodeHandle nh;
 std_msgs::Float64MultiArray msg;
@@ -45,10 +44,10 @@ void loop() {
   // write your code
 	
   // theta = ???
-	d_theta = (dis_R-dis_L)/2*WIDTH;
+	d_theta = (dis_R-dis_L)/(2*WIDTH);
 	theta+=d_theta;
-	x+= (cos(theata)*(dis_R+dis_L)) /2;
-	y+=(sin(theata)*(dis_R+dis_L)) /2;
+	x+= (cos(theta)*(dis_R+dis_L)) /2;
+	y+=(sin(theta)*(dis_R+dis_L)) /2;
 
   // x = ??? 
   // y = ???
