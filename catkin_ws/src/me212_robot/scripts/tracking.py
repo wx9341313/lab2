@@ -25,8 +25,26 @@ class Tracking:
 		theta = msg.data[2]
 		theta = theta % (2* pi)
 		print x,y,theta
-
+		
 		# stages: 1) straight line,
+		
+		if x<1:
+			self.leftMotor.run(1)
+			self.rightMotor.run(1)
+			self.leftMotor.setSpeed(100)
+			self.rightMotor.setSpeed(100)
+
+		elif x=1 :
+			self.leftMotor.run(3)
+			self.rightMotor.run(3)
+		
+		self.leftMotor.setSpeed(60)
+		self.rightMotor.setSpeed(120)
+		
+		
+
+
+
 		#         2) semi-circle
 		#         3) straight line again.
 

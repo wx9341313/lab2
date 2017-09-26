@@ -44,7 +44,7 @@ void loop() {
   // write your code
 	
   // theta = ???
-	d_theta = (dis_R-dis_L)/(2*WIDTH);
+	d_theta = (dis_R-dis_L)/(WIDTH);
 	theta+=d_theta;
 	x+= (cos(theta)*(dis_R+dis_L)) /2;
 	y+=(sin(theta)*(dis_R+dis_L)) /2;
