@@ -49,8 +49,10 @@ class Tracking:
 			self.rightMotor.setSpeed(100)
 		elif (x<-0.2):
 			
-			self.leftMotor.run(3)
-			self.rightMotor.run(3)
+			self.leftMotor.run(4)
+			self.rightMotor.run(4)
+			self.leftMotor.setSpeed(0)
+			self.rightMotor.setSpeed(0)
 	
 		#while( (x-1)>0.01 & abs(y-0)>0.01) :
 			
