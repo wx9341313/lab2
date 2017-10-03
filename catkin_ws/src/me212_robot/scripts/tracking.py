@@ -47,8 +47,10 @@ class Tracking:
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
 			self.rightMotor.setSpeed(100)
-
-
+		else :
+			
+			self.leftMotor.run(3)
+			self.rightMotor.run(3)
 	
 		#while( (x-1)>0.01 & abs(y-0)>0.01) :
 			
