@@ -28,18 +28,18 @@ class Tracking:
 		
 		# stages: 1) straight line,
 		
-		if x<1:
+		while ((abs(x-1)<0.1)&(abs(y-0)<0.1)) :
 			self.leftMotor.run(1)
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
 			self.rightMotor.setSpeed(100)
 
-		elif x=1 :
-			self.leftMotor.run(3)
-			self.rightMotor.run(3)
-		
-		self.leftMotor.setSpeed(60)
-		self.rightMotor.setSpeed(120)
+		#elif x=1 :
+		#	self.leftMotor.run(3)
+		#	self.rightMotor.run(3)
+		#
+		#self.leftMotor.setSpeed(60)
+		#self.rightMotor.setSpeed(120)
 		
 		
 
