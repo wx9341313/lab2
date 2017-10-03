@@ -47,7 +47,7 @@ class Tracking:
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
 			self.rightMotor.setSpeed(100)
-		else :
+		elif (x<-0.2):
 			
 			self.leftMotor.run(3)
 			self.rightMotor.run(3)
