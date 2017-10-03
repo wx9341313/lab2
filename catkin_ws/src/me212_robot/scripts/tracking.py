@@ -19,6 +19,7 @@ class Tracking:
 
 		rospy.on_shutdown(self.custom_shutdown)
 		rospy.loginfo("[%s] Initialized!" %self.node_name)
+
 	def cbPosition(self,msg):
 		x     = msg.data[0]
 		y     = msg.data[1]
@@ -28,11 +29,30 @@ class Tracking:
 		
 		# stages: 1) straight line,
 		
-		while ((abs(x-1)<0.1)&(abs(y-0)<0.1)) :
+		if ((abs(x-0)<1)&(abs(y-0)<0.01)) :
 			self.leftMotor.run(1)
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
 			self.rightMotor.setSpeed(100)
+
+		elif  (((x-1)>0.01)&((y-0.5)<0.01)) :
+					
+			self.leftMotor.setSpeed(60)
+			self.rightMotor.setSpeed(120)
+
+		elif ( x>0 & (y-0.5)<0.01 ) :
+
+			self.leftMotor.run(1)
+			self.rightMotor.run(1)
+			self.leftMotor.setSpeed(100)
+			self.rightMotor.setSpeed(100)
+
+
+	
+		#while( (x-1)>0.01 & abs(y-0)>0.01) :
+			
+		#	self.leftMotor.setSpeed(60)
+		#	self.rightMotor.setSpeed(120)
 
 		#elif x=1 :
 		#	self.leftMotor.run(3)
