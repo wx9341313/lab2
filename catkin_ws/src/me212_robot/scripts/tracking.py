@@ -29,19 +29,20 @@ class Tracking:
 		
 		# stages: 1) straight line,
 		
-		if ((abs(x-0)<1)&(abs(y-0)<0.01)) :
+
+		if ((abs(x-0)<1) and (abs(y-0)<0.01)) :
 			self.leftMotor.run(1)
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
 			self.rightMotor.setSpeed(100)
 
-		elif  (((x-1)>0.01)&((y-0.5)<0.01)) :
+		elif  (((x-1)>0.01) and ((y-0.5)<0.01) and theta <= pi) :
 					
 			self.leftMotor.setSpeed(60)
 			self.rightMotor.setSpeed(120)
 
-		elif ( x>0 & (y-0.5)<0.01 ) :
-
+		elif ( x>0  and theta>=pi) :
+#and (y-0.5)<0.01
 			self.leftMotor.run(1)
 			self.rightMotor.run(1)
 			self.leftMotor.setSpeed(100)
